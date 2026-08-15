@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+body {
+  background-color: #0A101D;
+  color: #CBD5E1; /* slate-300 */
+}
