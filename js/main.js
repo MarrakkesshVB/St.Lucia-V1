@@ -89,4 +89,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // 7. Mobile menu
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(a =>
+            a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+    }
+
+    // 8. Dynamic year
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 });

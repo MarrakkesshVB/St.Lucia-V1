@@ -1,8 +1,0 @@
-{
-  "name": "St. Lucia Express",
-  "description": "Precision maritime logistics and handling dashboard.",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}
