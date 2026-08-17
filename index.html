@@ -206,7 +206,17 @@
                         <div class="glass-panel">
                             <div class="glass-panel-in relative overflow-hidden h-40 lg:h-44 flex items-center justify-center">
                                 <div class="glass-glow" aria-hidden="true"></div>
-                                <i data-lucide="plane" class="relative text-[#ffb89e] w-12 h-12 group-hover:scale-110 transition-transform duration-500" style="stroke-width: 1.5px;"></i>
+                                <svg viewBox="0 0 200 100" class="relative w-[86%] max-w-[260px]" aria-hidden="true">
+                                  <path d="M20 72 Q 100 10 180 30" fill="none" stroke="rgba(148,163,184,.25)" stroke-width="1" stroke-dasharray="3 5"/>
+                                  <path d="M20 72 Q 100 10 180 30" fill="none" stroke="rgba(255,184,158,.8)" stroke-width="1.5"/>
+                                  <circle cx="20" cy="72" r="3.5" fill="#ffb89e"/>
+                                  <circle cx="180" cy="30" r="3.5" fill="#2dd4bf"/>
+                                  <circle r="3" fill="#ffffff" class="route-dot">
+                                    <animateMotion dur="4s" repeatCount="indefinite" path="M20 72 Q 100 10 180 30"/>
+                                  </circle>
+                                  <text x="12" y="90" fill="rgba(226,232,240,.5)" font-size="8" letter-spacing="2" font-family="Inter,sans-serif">MIA</text>
+                                  <text x="166" y="16" fill="rgba(226,232,240,.5)" font-size="8" letter-spacing="2" font-family="Inter,sans-serif">SLU</text>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col gap-4 px-1 pb-1">
@@ -221,7 +231,11 @@
                         <div class="glass-panel">
                             <div class="glass-panel-in relative overflow-hidden h-40 lg:h-44 flex items-center justify-center">
                                 <div class="glass-glow" aria-hidden="true"></div>
-                                <i data-lucide="warehouse" class="relative text-[#ffb89e] w-12 h-12 group-hover:scale-110 transition-transform duration-500" style="stroke-width: 1.5px;"></i>
+                                <div class="wh-grid" aria-hidden="true">
+                                  <span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span><span style="--i:5"></span>
+                                  <span style="--i:6"></span><span style="--i:7"></span><span style="--i:8"></span><span style="--i:9"></span><span style="--i:10"></span><span style="--i:11"></span>
+                                  <span style="--i:12"></span><span style="--i:13"></span><span style="--i:14"></span><span style="--i:15"></span><span style="--i:16"></span><span style="--i:17"></span>
+                                </div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-4 px-1 pb-1">
@@ -236,7 +250,10 @@
                         <div class="glass-panel">
                             <div class="glass-panel-in relative overflow-hidden h-40 lg:h-44 flex items-center justify-center">
                                 <div class="glass-glow" aria-hidden="true"></div>
-                                <i data-lucide="package" class="relative text-[#ffb89e] w-12 h-12 group-hover:scale-110 transition-transform duration-500" style="stroke-width: 1.5px;"></i>
+                                <div class="barcode-wrap" aria-hidden="true">
+                                  <div class="barcode"></div>
+                                  <span class="barcode-code">SLX-2048-EXP</span>
+                                </div>
                             </div>
                         </div>
                         <div class="flex flex-col gap-4 px-1 pb-1">
@@ -251,7 +268,19 @@
                         <div class="glass-panel">
                             <div class="glass-panel-in relative overflow-hidden h-40 lg:h-44 flex items-center justify-center">
                                 <div class="glass-glow" aria-hidden="true"></div>
-                                <i data-lucide="shield-check" class="relative text-[#ffb89e] w-12 h-12 group-hover:scale-110 transition-transform duration-500" style="stroke-width: 1.5px;"></i>
+                                <svg viewBox="0 0 120 120" class="seal relative" aria-hidden="true">
+                                  <defs>
+                                    <path id="sealPath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/>
+                                  </defs>
+                                  <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,184,158,.2)" stroke-width="1" stroke-dasharray="2 4"/>
+                                  <circle cx="60" cy="60" r="32" fill="none" stroke="rgba(255,184,158,.35)" stroke-width="1"/>
+                                  <g class="seal-spin">
+                                    <text fill="rgba(255,184,158,.85)" font-size="9.5" letter-spacing="3" font-family="Inter,sans-serif">
+                                      <textPath href="#sealPath">INSURED • PROTECTED • TRACKED •</textPath>
+                                    </text>
+                                  </g>
+                                  <path d="M48 60 l8 8 l16 -16" fill="none" stroke="#2dd4bf" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </div>
                         </div>
                         <div class="flex flex-col gap-4 px-1 pb-1">

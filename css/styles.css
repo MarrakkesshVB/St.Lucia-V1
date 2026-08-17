@@ -85,3 +85,30 @@ body {
     radial-gradient(80% 70% at 20% -10%, rgba(45,212,191,.18), transparent 60%);
 }
 @media (prefers-reduced-motion: reduce){.glass-card{transition:none;transform:none}}
+
+/* ---------- motivos de panel (services) ---------- */
+/* warehouse: cajas que se encienden */
+.wh-grid{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:6px;width:64%;max-width:220px}
+.wh-grid span{aspect-ratio:1;border-radius:4px;background:rgba(148,163,184,.10);border:1px solid rgba(148,163,184,.14);animation:whpulse 3.2s ease-in-out infinite;animation-delay:calc(var(--i)*.18s)}
+.group:hover .wh-grid span{animation-duration:1.2s}
+@keyframes whpulse{0%,100%{background:rgba(148,163,184,.10)}50%{background:rgba(255,184,158,.4);border-color:rgba(255,184,158,.45)}}
+/* barcode + láser */
+.barcode-wrap{display:flex;flex-direction:column;align-items:center;gap:10px}
+.barcode{position:relative;width:210px;height:52px;
+  background:
+    repeating-linear-gradient(90deg, rgba(226,232,240,.75) 0 2px, transparent 2px 5px),
+    repeating-linear-gradient(90deg, rgba(226,232,240,.5) 0 1px, transparent 1px 9px),
+    repeating-linear-gradient(90deg, rgba(226,232,240,.65) 0 3px, transparent 3px 14px)}
+.barcode::after{content:"";position:absolute;top:-6px;bottom:-6px;left:0;width:2px;background:#2dd4bf;box-shadow:0 0 12px 2px rgba(45,212,191,.65);animation:laser 2.8s ease-in-out infinite}
+.group:hover .barcode::after{animation-duration:1s}
+@keyframes laser{0%,100%{left:0}50%{left:calc(100% - 2px)}}
+.barcode-code{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.35em;color:rgba(226,232,240,.55)}
+/* sello giratorio */
+.seal{width:132px;height:132px}
+.seal-spin{transform-origin:60px 60px;animation:sealspin 16s linear infinite}
+.group:hover .seal-spin{animation-duration:5s}
+@keyframes sealspin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){
+  .wh-grid span,.barcode::after,.seal-spin{animation:none}
+  .route-dot{display:none}
+}
