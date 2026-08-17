@@ -142,10 +142,11 @@ body {
 .streaks{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
 .flip-front > *:not(.streaks){position:relative;z-index:1}
 .streaks span{
-  position:absolute;height:3px;border-radius:999px;
+  position:absolute;height:8px;border-radius:999px;
   left:var(--x);top:var(--y);width:var(--w);
-  background:linear-gradient(90deg,transparent,rgba(255,184,158,.75),transparent);
-  filter:blur(1px);
+  background:linear-gradient(90deg,transparent,rgba(255,184,158,.45) 15%,rgba(255,184,158,.8) 50%,rgba(255,184,158,.45) 85%,transparent);
+  box-shadow:0 0 14px rgba(255,184,158,.35);
+  filter:blur(.4px);
   opacity:0;
   animation:streak 3.4s ease-in-out infinite;
   animation-delay:var(--d);
