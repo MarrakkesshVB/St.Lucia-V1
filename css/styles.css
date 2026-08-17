@@ -50,3 +50,38 @@ body {
 }
 .beam-glow{filter:blur(14px);opacity:.35;z-index:-1}
 @media (prefers-reduced-motion: reduce){.beam-ring,.beam-glow{display:none}}
+
+/* ---------- glassmorphic service cards ---------- */
+.glass-card{
+  position:relative;
+  background:rgba(18,28,45,.5);
+  border:1px solid rgba(255,184,158,.16);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 0 70px -30px rgba(255,184,158,.28), 0 24px 48px -24px rgba(0,0,0,.6);
+  transition:border-color .4s, box-shadow .4s, transform .4s;
+}
+.glass-card:hover{
+  border-color:rgba(255,184,158,.45);
+  box-shadow:0 0 90px -30px rgba(255,184,158,.45), 0 24px 48px -24px rgba(0,0,0,.7);
+  transform:translateY(-4px);
+}
+.glass-panel{
+  border-radius:16px;padding:1.5px;
+  background:linear-gradient(135deg, rgba(255,184,158,.75), rgba(45,212,191,.45) 55%, rgba(255,184,158,.9));
+}
+.glass-panel-in{
+  border-radius:14.5px;
+  background-color:#0b1322;
+  background-image:
+    linear-gradient(rgba(148,163,184,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,163,184,.07) 1px, transparent 1px);
+  background-size:26px 26px;
+}
+.glass-glow{
+  position:absolute;inset:0;filter:blur(6px);
+  background:
+    radial-gradient(120% 90% at 70% 110%, rgba(255,184,158,.22), transparent 60%),
+    radial-gradient(80% 70% at 20% -10%, rgba(45,212,191,.18), transparent 60%);
+}
+@media (prefers-reduced-motion: reduce){.glass-card{transition:none;transform:none}}
