@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const weight = document.getElementById('weight').value;
 
             const subject = encodeURIComponent("Quote Request");
-            const bodyText = `Origin: ${origin}\nDestination: ${destination}\nType: ${cargoType}\nWeight: ${weight} kg`;
+            const bodyText = `Origin: ${origin}\nDestination: ${destination}\nType: ${cargoType}\nWeight/Volume: ${weight}`;
             const body = encodeURIComponent(bodyText);
             window.location.href = `mailto:ingrid@stluciaexpress.com?subject=${subject}&body=${body}`;
         });
