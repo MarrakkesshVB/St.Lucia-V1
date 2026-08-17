@@ -137,3 +137,24 @@ body {
   .flip-front,.flip-back,
   .flip-card:hover .flip-front,.flip-card:hover .flip-back{transition:opacity .2s, visibility 0s;transform:none}
 }
+
+/* ---------- speed streaks (frente de flip cards) ---------- */
+.streaks{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.flip-front > *:not(.streaks){position:relative;z-index:1}
+.streaks span{
+  position:absolute;height:3px;border-radius:999px;
+  left:var(--x);top:var(--y);width:var(--w);
+  background:linear-gradient(90deg,transparent,rgba(255,184,158,.75),transparent);
+  filter:blur(1px);
+  opacity:0;
+  animation:streak 3.4s ease-in-out infinite;
+  animation-delay:var(--d);
+}
+@keyframes streak{
+  0%{transform:translateX(-40px);opacity:0}
+  25%{opacity:.9}
+  50%{transform:translateX(30px);opacity:.45}
+  75%{opacity:.8}
+  100%{transform:translateX(60px);opacity:0}
+}
+@media (prefers-reduced-motion: reduce){.streaks{display:none}}
