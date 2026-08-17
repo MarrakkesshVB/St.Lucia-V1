@@ -22,3 +22,31 @@ body {
         transform: translateY(0);
     }
 }
+
+/* ---------- border beam: haz de luz que recorre el borde ---------- */
+.beam-card{position:relative;isolation:isolate;--beam-a:0deg}
+.beam-ring,.beam-glow{
+  position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;
+  background:conic-gradient(from var(--beam-a),
+    transparent 0deg,
+    rgba(255,184,158,.10) 20deg,
+    rgba(255,184,158,.65) 50deg,
+    #2dd4bf 62deg,
+    rgba(45,212,191,.25) 90deg,
+    transparent 120deg,
+    transparent 200deg,
+    rgba(255,107,94,.35) 230deg,
+    #ffffff 244deg,
+    rgba(255,255,255,.15) 258deg,
+    transparent 280deg,
+    transparent 360deg);
+}
+.beam-ring{
+  padding:1.5px;
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite:exclude;
+}
+.beam-glow{filter:blur(14px);opacity:.35;z-index:-1}
+@media (prefers-reduced-motion: reduce){.beam-ring,.beam-glow{display:none}}

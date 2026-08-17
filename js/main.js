@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // 0. Reload / F5 => siempre al tope
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    let tries = 0;
+    (function top(){
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        if (++tries < 20) setTimeout(top, 50);
+    })();
+    window.addEventListener('load', () => window.scrollTo({ top: 0, behavior: 'instant' }));
+    window.addEventListener('pageshow', e => { if (e.persisted) window.scrollTo({ top: 0, behavior: 'instant' }); });
+
     // 1. Initialize Icons
     lucide.createIcons();
 
@@ -102,4 +112,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // 8. Dynamic year
     const yearEl = document.getElementById('current-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // 9. Border beam: haz cónico que recorre el borde (hover = acelera)
+    document.querySelectorAll('.beam-card').forEach(card => {
+        let a = Math.random() * 360, sp = 60, tg = 60, last = performance.now();
+        const tick = t => {
+            const dt = Math.min((t - last) / 1000, 0.05); last = t;
+            sp += (tg - sp) * 0.08;
+            a = (a + sp * dt) % 360;
+            card.style.setProperty('--beam-a', a.toFixed(2) + 'deg');
+            requestAnimationFrame(tick);
+        };
+        card.addEventListener('mouseenter', () => tg = 320);
+        card.addEventListener('mouseleave', () => tg = 60);
+        requestAnimationFrame(tick);
+    });
 });
