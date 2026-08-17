@@ -23,10 +23,11 @@
     <nav class="fixed top-0 w-full z-50 px-6 lg:px-12 py-5 bg-[#0A101D]/70 backdrop-blur-md border-b border-slate-800/50">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <i data-lucide="ship" class="text-[#ffb89e] w-6 h-6"></i>
-                <span class="font-semibold text-xl text-[#ffb89e] tracking-wide">
-                    St. Lucia Express
-                </span>
+                <img src="assets/flag.png" alt="Saint Lucia flag" class="h-8 w-12 object-contain" />
+                <div class="flex flex-col">
+                    <span class="font-semibold text-lg text-[#ffb89e] tracking-wide">St. Lucia Express</span>
+                    <span class="text-[8px] tracking-[0.4em] text-slate-400 uppercase">Premium Freight Forwarding</span>
+                </div>
             </div>
             <div class="hidden lg:flex items-center gap-10">
                 <div class="flex items-center gap-8 text-slate-300 font-medium">
@@ -145,25 +146,35 @@
     </section>
 
     <!-- --- Trust Section --- -->
-    <section class="bg-[#121C2D] border-y border-slate-800/60 py-12 px-6 lg:px-12 relative z-10 overflow-hidden">
+    <section class="bg-[#121C2D] border-y border-slate-800/60 py-16 px-6 lg:px-12 relative z-10 overflow-hidden">
+        <div class="max-w-3xl mx-auto text-center mb-14 reveal">
+            <h3 class="text-slate-400 font-semibold uppercase tracking-widest text-xs mb-5">About St. Lucia Express</h3>
+            <p class="text-slate-300 leading-relaxed">Welcome to St. Lucia Express, your premier choice for shipping to St. Lucia. With over 20 years of industry expertise, we specialize in seamless and reliable freight forwarding services.</p>
+            <p class="text-slate-400 leading-relaxed mt-4">Our commitment to customer satisfaction, combined with a deep understanding of the St. Lucian market, ensures that your cargo arrives on time and in perfect condition. Trust us to be your shipping partner of choice.</p>
+        </div>
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-center justify-between">
             <div class="reveal flex-1 w-full">
                 <h3 class="text-slate-400 font-semibold uppercase tracking-widest text-xs mb-5 text-center lg:text-left">Licensed & Certified Operations</h3>
                 <div class="flex flex-wrap gap-3 justify-center lg:justify-start">
-                    <div class="px-4 py-2 rounded-full border border-slate-700 bg-[#0A101D]/50 text-slate-300 font-medium text-sm flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="text-teal-500 w-4 h-4"></i> IAC
+                    <div class="px-5 py-3 rounded-xl border border-slate-700 bg-[#0A101D]/50 flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="text-teal-500 w-4 h-4 shrink-0"></i>
+                        <span class="flex flex-col text-left"><b class="text-slate-200 text-sm tracking-widest">IAC</b><small class="text-slate-400 text-[10px]">Indirect Air Carrier</small></span>
                     </div>
-                    <div class="px-4 py-2 rounded-full border border-slate-700 bg-[#0A101D]/50 text-slate-300 font-medium text-sm flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="text-teal-500 w-4 h-4"></i> TSA
+                    <div class="px-5 py-3 rounded-xl border border-slate-700 bg-[#0A101D]/50 flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="text-teal-500 w-4 h-4 shrink-0"></i>
+                        <span class="flex flex-col text-left"><b class="text-slate-200 text-sm tracking-widest">TSA</b><small class="text-slate-400 text-[10px]">Transportation Security Administration</small></span>
                     </div>
-                    <div class="px-4 py-2 rounded-full border border-slate-700 bg-[#0A101D]/50 text-slate-300 font-medium text-sm flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="text-teal-500 w-4 h-4"></i> IATA
+                    <div class="px-5 py-3 rounded-xl border border-slate-700 bg-[#0A101D]/50 flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="text-teal-500 w-4 h-4 shrink-0"></i>
+                        <span class="flex flex-col text-left"><b class="text-slate-200 text-sm tracking-widest">IATA</b><small class="text-slate-400 text-[10px]">International Air Transport Association</small></span>
                     </div>
-                    <div class="px-4 py-2 rounded-full border border-slate-700 bg-[#0A101D]/50 text-slate-300 font-medium text-sm flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="text-teal-500 w-4 h-4"></i> FMA
+                    <div class="px-5 py-3 rounded-xl border border-slate-700 bg-[#0A101D]/50 flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="text-teal-500 w-4 h-4 shrink-0"></i>
+                        <span class="flex flex-col text-left"><b class="text-slate-200 text-sm tracking-widest">FMA</b><small class="text-slate-400 text-[10px]">Federal Maritime Services</small></span>
                     </div>
-                    <div class="px-4 py-2 rounded-full border border-slate-700 bg-[#0A101D]/50 text-slate-300 font-medium text-sm flex items-center gap-2">
-                        <i data-lucide="check-circle-2" class="text-teal-500 w-4 h-4"></i> NVOCC
+                    <div class="px-5 py-3 rounded-xl border border-slate-700 bg-[#0A101D]/50 flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="text-teal-500 w-4 h-4 shrink-0"></i>
+                        <span class="flex flex-col text-left"><b class="text-slate-200 text-sm tracking-widest">NVOCC</b><small class="text-slate-400 text-[10px]">Non Vessel Operating Common Carrier</small></span>
                     </div>
                 </div>
             </div>
@@ -188,7 +199,7 @@
                     <div>
                         <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Core Services</h2>
                         <p class="text-slate-400 max-w-xl text-lg leading-relaxed">
-                            Comprehensive logistics infrastructure designed for scale, speed, and security between the USA and St. Lucia.
+                            Our comprehensive services cater to both businesses aiming to streamline their shipping operations and individuals seeking to send their personal belongings to <span class="whitespace-nowrap">St. Lucia</span> with efficiency and ease.
                         </p>
                     </div>
                 </div>
@@ -349,7 +360,7 @@
                     <div class="bg-[#0A101D] p-10 lg:p-12 rounded-xl border border-slate-700 flex flex-col items-center text-center group hover:border-[#ffb89e]/50 transition-colors">
                         <i data-lucide="map-pin" class="text-teal-500 mb-6 group-hover:-translate-y-2 transition-transform duration-300 w-10 h-10"></i>
                         <h3 class="text-2xl font-bold text-white mb-3">St. Lucia</h3>
-                        <p class="text-slate-400 text-lg mb-8">Port Castries<br/>Vieux Fort</p>
+                        <p class="text-slate-400 text-lg mb-8">Castries<br/>Vieux Fort</p>
                         <div class="text-xs font-bold tracking-widest text-[#ffb89e] uppercase bg-[#ffb89e]/10 px-4 py-2 rounded-full">Destination Terminals</div>
                     </div>
                 </div>
@@ -374,12 +385,13 @@
     <footer class="bg-[#0A101D] border-t border-slate-800/60 pt-16 pb-12 px-6 lg:px-12 relative z-10">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-8">
             
-            <div class="md:col-span-2 lg:pr-12">
+            <div class="md:col-span-2 lg:col-span-1 lg:pr-8">
                 <div class="flex items-center gap-3 mb-6">
-                    <i data-lucide="ship" class="text-[#ffb89e] w-6 h-6"></i>
-                    <span class="font-semibold text-xl text-[#ffb89e] tracking-wide">
-                        St. Lucia Express
-                    </span>
+                    <img src="assets/flag.png" alt="Saint Lucia flag" class="h-8 w-12 object-contain" />
+                    <div class="flex flex-col">
+                        <span class="font-semibold text-lg text-[#ffb89e] tracking-wide">St. Lucia Express</span>
+                        <span class="text-[8px] tracking-[0.4em] text-slate-400 uppercase">Premium Freight Forwarding</span>
+                    </div>
                 </div>
                 <p class="text-slate-400 text-sm mb-8 leading-relaxed max-w-sm">
                     Engineered logistics solutions for a connected world. Licensed, insured, and trusted for over 20 years.
@@ -404,8 +416,17 @@
             <div class="md:col-span-1">
                 <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-6">St. Lucia</h4>
                 <ul class="space-y-4 text-slate-400 text-sm">
-                    <li>Port Castries</li>
+                    <li>Castries</li>
                     <li>Vieux Fort</li>
+                </ul>
+            </div>
+
+            <div class="md:col-span-1">
+                <h4 class="text-white font-bold text-sm tracking-wider uppercase mb-6">Opening Hours</h4>
+                <ul class="space-y-3 text-slate-400 text-sm">
+                    <li class="flex justify-between gap-6"><span class="text-slate-300">Mon - Fri</span><span>8:00 am – 5:00 pm</span></li>
+                    <li class="flex justify-between gap-6"><span class="text-slate-300">Saturday</span><span>9:00 am – 2:00 pm</span></li>
+                    <li class="flex justify-between gap-6"><span class="text-slate-300">Sunday</span><span class="text-[#ffb89e]">Closed</span></li>
                 </ul>
             </div>
 
