@@ -71,20 +71,56 @@ document.addEventListener("DOMContentLoaded", () => {
 
     counterElements.forEach(el => counterObserver.observe(el));
 
-    // 5. Form Submission Mailto
+    // 5. Form Submission Web3Forms
     const quoteForm = document.getElementById('quote-form');
     if (quoteForm) {
-        quoteForm.addEventListener('submit', (e) => {
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const btnIcon = document.getElementById('btn-icon');
+        
+        quoteForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const origin = document.getElementById('origin').value;
-            const destination = document.getElementById('destination').value;
-            const cargoType = document.getElementById('cargoType').value;
-            const weight = document.getElementById('weight').value;
-
-            const subject = encodeURIComponent("Quote Request");
-            const bodyText = `Origin: ${origin}\nDestination: ${destination}\nType: ${cargoType}\nWeight/Volume: ${weight}`;
-            const body = encodeURIComponent(bodyText);
-            window.location.href = `mailto:ingrid@stluciaexpress.com?subject=${subject}&body=${body}`;
+            
+            // Honeypot check (anti-spam)
+            if (quoteForm.querySelector('[name="bot-field"]').value) return;
+            
+            const formData = new FormData(quoteForm);
+            
+            // UI: loading state
+            submitBtn.disabled = true;
+            btnText.textContent = 'Sending...';
+            btnIcon.style.display = 'none';
+            
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    btnText.textContent = 'Quote sent!';
+                    submitBtn.classList.add('bg-green-500', 'hover:bg-green-500');
+                    quoteForm.reset();
+                    
+                    setTimeout(() => {
+                        btnText.textContent = 'Request Rate';
+                        btnIcon.style.display = 'inline-block';
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('bg-green-500', 'hover:bg-green-500');
+                        lucide.createIcons();
+                    }, 3000);
+                } else {
+                    throw new Error(result.message || 'Submission failed');
+                }
+            } catch (error) {
+                btnText.textContent = 'Error — try again';
+                submitBtn.disabled = false;
+                btnIcon.style.display = 'inline-block';
+                lucide.createIcons();
+                console.error('Form submission error:', error);
+            }
         });
     }
 

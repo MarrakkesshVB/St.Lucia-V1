@@ -107,24 +107,29 @@
                 <div class="bg-[#121C2D]/85 border border-slate-700/50 p-6 lg:p-8 rounded-xl backdrop-blur-md shadow-2xl">
                     <h2 class="text-xl lg:text-2xl text-white font-semibold mb-8">Quick Quote Estimate</h2>
                     <form id="quote-form" class="flex flex-col gap-5">
+                        <input type="hidden" name="access_key" value="f101fd90-7469-4ab4-a42a-82791439b27f" />
+                        <input type="hidden" name="subject" value="Nueva cotización — St. Lucia Express" />
+                        <input type="hidden" name="from_name" value="St. Lucia Express — Web" />
+                        <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off" />
+                        
                         <div>
                             <label class="block text-xs font-semibold text-slate-400 tracking-wider mb-2 uppercase">Origin Port / City</label>
                             <div class="relative">
                                 <i data-lucide="map-pin" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 w-[18px] h-[18px]"></i>
-                                <input type="text" id="origin" required placeholder="e.g., Miami, FL" class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#ffb89e] transition-colors" />
+                                <input type="text" name="origin" required placeholder="e.g., Miami, FL" class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#ffb89e] transition-colors" />
                             </div>
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-slate-400 tracking-wider mb-2 uppercase">Destination</label>
                             <div class="relative">
                                 <i data-lucide="flag" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 w-[18px] h-[18px]"></i>
-                                <input type="text" id="destination" required placeholder="e.g., Castries, St. Lucia" class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#ffb89e] transition-colors" />
+                                <input type="text" name="destination" required placeholder="e.g., Castries, St. Lucia" class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#ffb89e] transition-colors" />
                             </div>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-semibold text-slate-400 tracking-wider mb-2 uppercase">Service Type</label>
-                                <select id="cargoType" class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 px-4 text-white appearance-none focus:outline-none focus:border-[#ffb89e] transition-colors">
+                                <select name="service_type" class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 px-4 text-white appearance-none focus:outline-none focus:border-[#ffb89e] transition-colors">
                                     <option>Ocean Freight</option>
                                     <option>Air Freight</option>
                                     <option>Small Packages</option>
@@ -133,11 +138,12 @@
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold text-slate-400 tracking-wider mb-2 uppercase">Weight / Volume</label>
-                                <input type="text" id="weight" required placeholder="e.g. 200 lbs or 2 Pallets" class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 px-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#ffb89e] transition-colors" />
+                                <input type="text" name="weight_volume" required placeholder="e.g. 200 lbs or 2 Pallets" class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 px-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#ffb89e] transition-colors" />
                             </div>
                         </div>
-                        <button type="submit" class="w-full bg-[#ffb89e] text-[#0A101D] font-bold py-3.5 rounded-md flex items-center justify-center gap-2 hover:bg-[#ffb89e]/90 transition-colors mt-4">
-                            Request Rate <i data-lucide="arrow-right" class="w-[18px] h-[18px]" style="stroke-width: 2.5px;"></i>
+                        <button type="submit" id="submit-btn" class="w-full bg-[#ffb89e] text-[#0A101D] font-bold py-3.5 rounded-md flex items-center justify-center gap-2 hover:bg-[#ffb89e]/90 transition-colors mt-4 disabled:opacity-60 disabled:cursor-not-allowed">
+                            <span id="btn-text">Request Rate</span>
+                            <i data-lucide="arrow-right" id="btn-icon" class="w-[18px] h-[18px]" style="stroke-width: 2.5px;"></i>
                         </button>
                     </form>
                 </div>

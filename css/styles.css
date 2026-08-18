@@ -159,3 +159,6 @@ body {
   100%{transform:translateX(60px);opacity:0}
 }
 @media (prefers-reduced-motion: reduce){.streaks{display:none}}
+
+/* ---------- form submit states ---------- */
+#submit-btn{transition:all .3s}
