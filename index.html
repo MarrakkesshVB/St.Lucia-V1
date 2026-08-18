@@ -111,35 +111,53 @@
                         <input type="hidden" name="subject" value="Nueva cotización — St. Lucia Express" />
                         <input type="hidden" name="from_name" value="St. Lucia Express — Web" />
                         <input type="text" name="bot-field" style="display:none" tabindex="-1" autocomplete="off" />
-                        
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-400 tracking-wider mb-2 uppercase">Origin Port / City</label>
-                            <div class="relative">
-                                <i data-lucide="map-pin" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 w-[18px] h-[18px]"></i>
-                                <input type="text" name="origin" required placeholder="e.g., Miami, FL" class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#ffb89e] transition-colors" />
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-400 tracking-wider mb-2 uppercase">First Name</label>
+                                <div class="relative">
+                                    <i data-lucide="user" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 w-[18px] h-[18px]"></i>
+                                    <input type="text" name="first_name" required class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#ffb89e] transition-colors" />
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-400 tracking-wider mb-2 uppercase">Destination</label>
-                            <div class="relative">
-                                <i data-lucide="flag" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 w-[18px] h-[18px]"></i>
-                                <input type="text" name="destination" required placeholder="e.g., Castries, St. Lucia" class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#ffb89e] transition-colors" />
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-400 tracking-wider mb-2 uppercase">Last Name</label>
+                                <div class="relative">
+                                    <i data-lucide="user-round" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 w-[18px] h-[18px]"></i>
+                                    <input type="text" name="last_name" required class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#ffb89e] transition-colors" />
+                                </div>
                             </div>
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-semibold text-slate-400 tracking-wider mb-2 uppercase">Service Type</label>
-                                <select name="service_type" class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 px-4 text-white appearance-none focus:outline-none focus:border-[#ffb89e] transition-colors">
-                                    <option>Ocean Freight</option>
-                                    <option>Air Freight</option>
-                                    <option>Small Packages</option>
-                                    <option>Warehouse Processing</option>
-                                </select>
+                                <label class="block text-xs font-semibold text-slate-400 tracking-wider mb-2 uppercase">Phone / WhatsApp</label>
+                                <div class="relative">
+                                    <i data-lucide="phone" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 w-[18px] h-[18px]"></i>
+                                    <input type="tel" name="phone" required class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#ffb89e] transition-colors" />
+                                </div>
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-slate-400 tracking-wider mb-2 uppercase">Weight / Volume</label>
-                                <input type="text" name="weight_volume" required placeholder="e.g. 200 lbs or 2 Pallets" class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 px-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#ffb89e] transition-colors" />
+                                <label class="block text-xs font-semibold text-slate-400 tracking-wider mb-2 uppercase">Email</label>
+                                <div class="relative">
+                                    <i data-lucide="mail" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 w-[18px] h-[18px]"></i>
+                                    <input type="email" name="email" required class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 pl-11 pr-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#ffb89e] transition-colors" />
+                                </div>
                             </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 tracking-wider mb-2 uppercase">Destination</label>
+                            <div class="relative">
+                                <i data-lucide="flag" class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 w-[18px] h-[18px]"></i>
+                                <select name="destination" class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 pl-11 pr-4 text-white appearance-none focus:outline-none focus:border-[#ffb89e] transition-colors cursor-pointer">
+                                    <option>Castries</option>
+                                    <option>Vieux Fort</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-400 tracking-wider mb-2 uppercase">More Information</label>
+                            <textarea name="more_information" rows="4" required placeholder="Tell us what you'd like to ship: boxes, pallets, furniture, vehicles..." class="w-full bg-[#0A101D] border border-slate-700 rounded-md py-3 px-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#ffb89e] transition-colors resize-none"></textarea>
                         </div>
                         <button type="submit" id="submit-btn" class="w-full bg-[#ffb89e] text-[#0A101D] font-bold py-3.5 rounded-md flex items-center justify-center gap-2 hover:bg-[#ffb89e]/90 transition-colors mt-4 disabled:opacity-60 disabled:cursor-not-allowed">
                             <span id="btn-text">Request Rate</span>
