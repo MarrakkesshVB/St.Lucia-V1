@@ -82,9 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             
             // Honeypot check (anti-spam)
-            if (quoteForm.querySelector('[name="bot-field"]').value) return;
-            
             const formData = new FormData(quoteForm);
+            if (formData.get('bot-field')) return;
+            formData.delete('bot-field');
             
             // UI: loading state
             submitBtn.disabled = true;
