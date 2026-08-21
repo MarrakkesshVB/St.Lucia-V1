@@ -10,7 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener('pageshow', e => { if (e.persisted) window.scrollTo({ top: 0, behavior: 'instant' }); });
 
     // 1. Initialize Icons
-    lucide.createIcons();
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    } else {
+        console.warn('Los iconos de Lucide no se pudieron cargar.');
+    }
 
     // 2. Prefers Reduced Motion Check
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -109,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         btnIcon.style.display = 'inline-block';
                         submitBtn.disabled = false;
                         submitBtn.classList.remove('bg-green-500', 'hover:bg-green-500');
-                        lucide.createIcons();
+                        if (typeof lucide !== 'undefined') lucide.createIcons();
                     }, 3000);
                 } else {
                     throw new Error(result.message || 'Submission failed');
@@ -118,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 btnText.textContent = 'Error — try again';
                 submitBtn.disabled = false;
                 btnIcon.style.display = 'inline-block';
-                lucide.createIcons();
+                if (typeof lucide !== 'undefined') lucide.createIcons();
                 console.error('Form submission error:', error);
             }
         });
